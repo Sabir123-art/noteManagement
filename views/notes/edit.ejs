@@ -1,0 +1,54 @@
+<!-- <form action="/notes/edit/<%= note._id %>?_method=PUT" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <div class="mb-3">
+    <label class="form-label">Student</label>
+    <p class="form-control-plaintext"><%= note.student.name %> (<%= note.student.studentId %>)</p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Date Created</label>
+    <p class="form-control-plaintext"><%= note.createdAt.toLocaleString() %></p>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Note Content</label>
+    <textarea name="content" id="content" rows="5" class="form-control" required><%= note.content %></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Update Note</button>
+  <a href="/notes" class="btn btn-secondary">Cancel</a>
+</form> -->
+
+
+
+
+<form action="/notes/edit/<%= note._id %>?_method=PUT" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  
+  <div class="mb-3">
+    <label class="form-label">Counselor</label>
+    <p class="form-control-plaintext"><%= note.counselor.name %></p>
+  </div>
+  
+  <div class="mb-3">
+    <label for="student" class="form-label">Student</label>
+    <select name="student" id="student" class="form-select" required>
+      <% students.forEach(student => { %>
+        <option value="<%= student._id %>" 
+          <%= note.student._id.toString() === student._id.toString() ? 'selected' : '' %>>
+          <%= student.name %> (<%= student.studentId %>)
+        </option>
+      <% }); %>
+    </select>
+  </div>
+  
+  <div class="mb-3">
+    <label class="form-label">Date Created</label>
+    <p class="form-control-plaintext"><%= note.createdAt.toLocaleString() %></p>
+  </div>
+  
+  <div class="mb-3">
+    <label for="content" class="form-label">Note Content</label>
+    <textarea name="content" id="content" rows="5" class="form-control" required><%= note.content %></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Update Note</button>
+  <a href="/notes" class="btn btn-secondary">Cancel</a>
+</form>

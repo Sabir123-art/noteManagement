@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h3>My Profile</h3>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Name:</div>
+            <div class="col-md-8"><%= student.name %></div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Student ID:</div>
+            <div class="col-md-8"><%= student.studentId %></div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Email:</div>
+            <div class="col-md-8"><%= student.email %></div>
+          </div>
+          <% if (student.phone) { %>
+            <div class="row mb-3">
+              <div class="col-md-4 fw-bold">Phone:</div>
+              <div class="col-md-8"><%= student.phone %></div>
+            </div>
+          <% } %>
+          <div class="mt-4">
+            <a href="/students/notes" class="btn btn-primary">
+              <i class="fas fa-book"></i> View My Notes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .hero-section {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <section class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-4 mb-4">Welcome to Session Notes Management</h1>
+      <p class="lead mb-5">A comprehensive system for managing student counseling sessions</p>
+      
+      <% if (typeof user === 'undefined' || !user) { %>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="/login" class="btn btn-primary btn-lg px-4 gap-3">Login</a>
+          <a href="/register" class="btn btn-outline-secondary btn-lg px-4">Register</a>
+        </div>
+      <% } else { %>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="/notes" class="btn btn-primary btn-lg px-4 gap-3">View Notes</a>
+          <% if (user.role === 'counselor') { %>
+            <a href="/notes/add" class="btn btn-success btn-lg px-4">Add New Note</a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+

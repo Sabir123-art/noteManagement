@@ -1,0 +1,19 @@
+<h2>Add New Session Note</h2>
+
+<form action="/notes/add" method="POST">
+  <div class="mb-3">
+    <label for="student" class="form-label">Student</label>
+    <select name="student" id="student" class="form-select" required>
+      <option value="">Select a student</option>
+      <% students.forEach(student => { %>
+        <option value="<%= student._id %>"><%= student.name %> (<%= student.studentId %>)</option>
+      <% }); %>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Note Content</label>
+    <textarea name="content" id="content" rows="5" class="form-control" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save Note</button>
+  <a href="/notes" class="btn btn-secondary">Cancel</a>
+</form>

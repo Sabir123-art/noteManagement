@@ -1,0 +1,33 @@
+<h2 class="mb-4">Register</h2>
+
+<form action="/register" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Full Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <div class="mb-3">
+    <label for="passwordConfirm" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Role</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="role" id="student" value="student" checked>
+      <label class="form-check-label" for="student">Student</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="role" id="counselor" value="counselor">
+      <label class="form-check-label" for="counselor">Counselor</label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+  <a href="/login" class="btn btn-link">Already have an account? Login</a>
+</form>
