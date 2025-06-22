@@ -1,4 +1,4 @@
-# 🏫 School Management CRUD Module
+# 🏫 noteManagement CRUD Module
 
 This project is a noteManagement CRUD module built using **Node.js**, **Express**, **MongoDB**, **EJS**, and **Bootstrap**. It allows admins to manage the notes with full Create, Read, Update, and Delete functionality.
 
